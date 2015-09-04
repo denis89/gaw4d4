@@ -68,10 +68,16 @@ Write SQL statements that:
     select id from users where name = 'Jonathan Anderson';
 
     19. Inserts a wishlist entry for the user with the name "Jonathan Anderson" for the product "The Ruby Programming Language".
-    
+ ?   
     20. Updates the name of the "Jonathan Anderson" user to be "Jon Anderson".
+    update users set name = "Jon Anderson" where name = "Jonathan Anderson";
+
     21. Deletes the user with the name "Jon Anderson".
+    delete from users where name = "Jon Anderson";
+
+
     22. Deletes the wishlist item for the user you just deleted.
+    delete from wishlists where (select id from users where name = "Jon Anderson")
 
 Please supply SQL statements, and the results they generate.
 
